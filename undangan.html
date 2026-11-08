@@ -75,7 +75,8 @@ opacity: 0;
 <section class="cover" id="awal">
 <p>UNDANGAN PERNIKAHAN</p>
 <h1>Aldes & Pasangan</h1>
-<p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+<p>Kepada Yth.</p>
+<h3 id="nama-tamu">Bapak/Ibu/Saudara/i</h3>
 <p>Dengan penuh sukacita kami mengundang Anda</p>
 <button onclick="bukaUndangan()">BUKA UNDANGAN</button>
 </section>
@@ -263,6 +264,15 @@ function hitungMundur() {
 
 hitungMundur();
 setInterval(hitungMundur, 1000);
+</script>
+  <script>
+const parameter = new URLSearchParams(window.location.search);
+const namaTamu = parameter.get("to");
+
+if (namaTamu) {
+  document.getElementById("nama-tamu").textContent =
+    namaTamu.replace(/-/g, " ");
+}
 </script>
 </body>
 </html>
