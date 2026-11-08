@@ -158,6 +158,19 @@ SALIN NOMOR REKENING
 </section>
   
 <section>
+<section>
+<h2>Menuju Hari Bahagia</h2>
+<p>15 Desember 2026</p>
+
+<div class="card">
+<div id="hitung-mundur" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
+<div><h2 id="hari">0</h2><p>Hari</p></div>
+<div><h2 id="jam">0</h2><p>Jam</p></div>
+<div><h2 id="menit">0</h2><p>Menit</p></div>
+<div><h2 id="detik">0</h2><p>Detik</p></div>
+</div>
+</div>
+</section>
 <h2>Konfirmasi Kehadiran</h2>
 <div class="card">
 <p>Kehadiran dan doa restu Anda merupakan sukacita yang sangat berarti bagi kami.</p>
@@ -222,6 +235,34 @@ for (let i = 0; i < 12; i++) {
 
   document.body.appendChild(kelopak);
 }
+</script>
+  <script>
+function hitungMundur() {
+  const tujuan = new Date("December 15, 2026 08:00:00 GMT+0800").getTime();
+  const sekarang = new Date().getTime();
+  const selisih = tujuan - sekarang;
+
+  if (selisih <= 0) {
+    document.getElementById("hitung-mundur").innerHTML =
+      "<h2>Hari Bahagia Telah Tiba! ❤️</h2>";
+    return;
+  }
+
+  document.getElementById("hari").textContent =
+    Math.floor(selisih / (1000 * 60 * 60 * 24));
+
+  document.getElementById("jam").textContent =
+    Math.floor((selisih / (1000 * 60 * 60)) % 24);
+
+  document.getElementById("menit").textContent =
+    Math.floor((selisih / (1000 * 60)) % 60);
+
+  document.getElementById("detik").textContent =
+    Math.floor((selisih / 1000) % 60);
+}
+
+hitungMundur();
+setInterval(hitungMundur, 1000);
 </script>
 </body>
 </html>
