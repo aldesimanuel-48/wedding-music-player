@@ -265,14 +265,16 @@ function hitungMundur() {
 hitungMundur();
 setInterval(hitungMundur, 1000);
 </script>
-  <script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
 const parameter = new URLSearchParams(window.location.search);
 const namaTamu = parameter.get("to");
+const tempatNama = document.getElementById("nama-tamu");
 
-if (namaTamu) {
-  document.getElementById("nama-tamu").textContent =
-    namaTamu.replace(/-/g, " ");
+if (namaTamu && tempatNama) {
+tempatNama.textContent = decodeURIComponent(namaTamu.replace(/\+/g, " "));
 }
+});
 </script>
 </body>
 </html>
