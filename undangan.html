@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan Aldes</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,serif;background:#f8f3ed;color:#493b32;text-align:center}
+section{padding:65px 20px;min-height:300px}
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(#0006,#0008),url('judul.jpg') center/cover;color:white;padding:25px}
+h1{font-size:38px;margin:15px}
+h2{color:#98734f;font-size:27px}
+p{line-height:1.8}
+button,.btn{background:#98734f;color:white;border:0;padding:13px 25px;border-radius:25px;font-size:15px;text-decoration:none;cursor:pointer}
+.card{background:white;padding:25px;margin:15px auto;max-width:520px;border-radius:15px;box-shadow:0 3px 15px #0001}
+.line{width:60px;height:2px;background:#b99a76;margin:20px auto}
+.music{position:fixed;bottom:18px;right:15px;z-index:10}
+footer{padding:35px;background:#493b32;color:white}
+</style>
+</head>
+<body>
+
+<section class="cover" id="awal">
+<p>UNDANGAN PERNIKAHAN</p>
+<h1>Aldes & Pasangan</h1>
+<p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+<p>Dengan penuh sukacita kami mengundang Anda</p>
+<button onclick="bukaUndangan()">BUKA UNDANGAN</button>
+</section>
+
+<section>
+<h2>Salam Sejahtera</h2>
+<div class="line"></div>
+<p>Dengan penuh rasa syukur kepada Tuhan, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri dan memberikan doa restu pada pernikahan kami.</p>
+</section>
+
+<section>
+<h2>Mempelai</h2>
+<div class="card">
+<h2>Aldes</h2>
+<p>Putra dari keluarga mempelai pria</p>
+<h1>&</h1>
+<h2>Nama Pasangan</h2>
+<p>Putri dari keluarga mempelai wanita</p>
+</div>
+</section>
+
+<section>
+<h2>Ayat Pernikahan</h2>
+<div class="card">
+<p>"Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia."</p>
+<p><b>Matius 19:6</b></p>
+</div>
+</section>
+
+<section>
+<h2>Waktu & Tempat</h2>
+<div class="card">
+<h2>Pemberkatan Pernikahan</h2>
+<p>Hari/Tanggal: Akan diinformasikan</p>
+<p>Waktu: Akan diinformasikan</p>
+<p>Tempat: Akan diinformasikan</p>
+</div>
+<div class="card">
+<h2>Resepsi Pernikahan</h2>
+<p>Hari/Tanggal: Akan diinformasikan</p>
+<p>Waktu: Akan diinformasikan</p>
+<p>Tempat: Akan diinformasikan</p>
+</div>
+</section>
+
+<section>
+<h2>Lokasi Acara</h2>
+<div class="card">
+<p>Lokasi pernikahan kami</p>
+<p>Alamat akan segera dilengkapi.</p>
+</div>
+</section>
+
+<section>
+<h2>Konfirmasi Kehadiran</h2>
+<div class="card">
+<p>Mohon konfirmasi kehadiran Anda kepada kedua mempelai.</p>
+<p>Nomor WhatsApp akan ditambahkan kemudian.</p>
+</div>
+</section>
+
+<section>
+<h2>Ucapan & Doa</h2>
+<div class="card">
+<p>Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+</div>
+</section>
+
+<footer>
+<p>Terima kasih atas doa dan kasih Anda.</p>
+<h2 style="color:white">Aldes & Pasangan</h2>
+<p>Tuhan memberkati.</p>
+</footer>
+
+<div class="music">
+<button onclick="putarMusik()">🎵 MUSIK</button>
+</div>
+
+<audio id="musik" src="judul.mp3" loop></audio>
+
+<script>
+function bukaUndangan(){
+document.getElementById('musik').play();
+document.getElementById('awal').style.display='none';
+}
+function putarMusik(){
+const m=document.getElementById('musik');
+if(m.paused){m.play()}else{m.pause()}
+}
+</script>
+
+</body>
+</html>
