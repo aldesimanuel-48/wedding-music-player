@@ -17,6 +17,57 @@ button,.btn{background:#98734f;color:white;border:0;padding:13px 25px;border-rad
 .line{width:60px;height:2px;background:#b99a76;margin:20px auto}
 .music{position:fixed;bottom:18px;right:15px;z-index:10}
 footer{padding:35px;background:#493b32;color:white}
+/* DEKORASI ROMANTIS ALDES & VINA */
+body {
+background-color: #fffaf7;
+}
+
+section {
+position: relative;
+overflow: hidden;
+}
+
+section::before {
+content: "🌸";
+position: absolute;
+top: 10px;
+left: 12px;
+font-size: 25px;
+opacity: 0.65;
+pointer-events: none;
+}
+
+section::after {
+content: "🌷";
+position: absolute;
+bottom: 10px;
+right: 12px;
+font-size: 25px;
+opacity: 0.65;
+pointer-events: none;
+}
+
+.flower {
+position: fixed;
+top: -40px;
+z-index: 999;
+pointer-events: none;
+animation: bungaJatuh linear infinite;
+}
+
+@keyframes bungaJatuh {
+0% {
+transform: translateY(-40px) rotate(0deg);
+opacity: 0;
+}
+15% {
+opacity: 0.8;
+}
+100% {
+transform: translateY(110vh) rotate(360deg);
+opacity: 0;
+}
+}
 </style>
 </head>
 <body>
@@ -156,6 +207,21 @@ const m=document.getElementById('musik');
 if(m.paused){m.play()}else{m.pause()}
 }
 </script>
+<script>
+const bunga = ["🌸", "🌷", "🌼", "🌺"];
 
+for (let i = 0; i < 12; i++) {
+  const kelopak = document.createElement("span");
+  kelopak.className = "flower";
+  kelopak.textContent = bunga[i % bunga.length];
+
+  kelopak.style.left = Math.random() * 100 + "vw";
+  kelopak.style.animationDuration = (8 + Math.random() * 8) + "s";
+  kelopak.style.animationDelay = (Math.random() * 10) + "s";
+  kelopak.style.fontSize = (14 + Math.random() * 12) + "px";
+
+  document.body.appendChild(kelopak);
+}
+</script>
 </body>
 </html>
