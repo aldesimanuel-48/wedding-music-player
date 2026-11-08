@@ -6,7 +6,7 @@
 <title>Undangan Pernikahan Aldes</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Georgia,serif;background:#f8f3ed;color:#493b32;text-align:center}
+body{margin:0;font-family:Georgia,serif;background:#f8f3ed;color:#493b32;text-align:center;overflow:hidden}
 section{padding:65px 20px;min-height:300px}
 .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(#0006,#0008),url('judul.jpg') center/cover;color:white;padding:25px}
 h1{font-size:38px;margin:15px}
@@ -116,6 +116,7 @@ KIRIM UCAPAN & DOA
 function bukaUndangan(){
 document.getElementById('musik').play();
 document.getElementById('awal').style.display='none';
+document.body.style.overflow='auto';
 }
 function putarMusik(){
 const m=document.getElementById('musik');
