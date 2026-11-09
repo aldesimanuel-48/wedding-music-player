@@ -8,7 +8,19 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Georgia,serif;background:#f8f3ed;color:#493b32;text-align:center;overflow:hidden}
 section{padding:65px 20px;min-height:300px}
-.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(#0006,#0008),url('judul.jpg') center/cover;color:white;padding:25px}
+.cover{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(#0006,#0008),url('judul.jpg') center/cover;
+color:white;
+padding:25px;
+opacity:1;
+transform:scale(1);
+transition:opacity 1s ease, transform 1s ease;
+}
 h1{font-size:38px;margin:15px}
 h2{color:#98734f;font-size:27px}
 p{line-height:1.8}
