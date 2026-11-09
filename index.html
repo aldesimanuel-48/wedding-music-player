@@ -35,15 +35,49 @@ button {
   cursor: pointer;
 }
 </style>
+  
+/* ANIMASI ROMANTIS ALDES & VINA */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-romantic {
+  animation: fadeInUp 1.8s ease-out both;
+}
+
+.animate-slow {
+  animation: fadeInUp 2.5s ease-out both;
+}
+
 </head>
 <body>
 <div class="player">
-  <img src="judul.jpg" alt="Wedding">
-  <h2>Wedding Music</h2>
-  <p>Aldes & Pasangan</p>
-  <audio id="musik" src="judul.mp3" loop></audio>
-  <button onclick="document.getElementById('musik').play()">▶ PLAY MUSIC</button>
-  <p>With Love ❤️</p>
+ 
+<img src="judul.jpg" alt="Wedding">
+
+<h2 class="animate-romantic">Wedding Music</h2>
+
+<p class="animate-romantic" style="animation-delay: 0.7s;">
+  Aldes & Vina
+</p>
+
+<audio id="musik" src="judul.mp3" loop></audio>
+
+<button onclick="document.getElementById('musik').play()">
+  ▶ PLAY MUSIC
+</button>
+
+<p class="animate-slow" style="animation-delay: 1.5s;">
+  With Love ❤️
+</p>
+
 </div>
 </body>
 </html>
