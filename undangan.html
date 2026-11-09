@@ -219,7 +219,7 @@ KIRIM UCAPAN & DOA
 <button onclick="putarMusik()">🎵 MUSIK</button>
 </div>
 
-<audio id="musik" src="judul.mp3" loop></audio>
+<audio id="musik" src="lagu..mp3" loop></audio>
 
 <script>
 function bukaUndangan(){
@@ -236,10 +236,31 @@ function bukaUndangan(){
     document.body.style.overflow = 'auto';
   }, 1000);
 }
-</script>
+<script>
+function bukaUndangan(){
+  const awal = document.getElementById('awal');
+  const musik = document.getElementById('musik');
+
+  musik.play().catch(error => {
+    console.log("Musik gagal diputar:", error);
+  });
+
+  awal.style.opacity = '0';
+  awal.style.transform = 'scale(1.03)';
+
+  setTimeout(function(){
+    awal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }, 1000);
+}
+
 function putarMusik(){
-const m=document.getElementById('musik');
-if(m.paused){m.play()}else{m.pause()}
+  const m = document.getElementById('musik');
+  if(m.paused){
+    m.play();
+  } else {
+    m.pause();
+  }
 }
 </script>
 <script>
