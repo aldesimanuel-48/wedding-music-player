@@ -219,32 +219,19 @@ KIRIM UCAPAN & DOA
 <button onclick="putarMusik()">🎵 MUSIK</button>
 </div>
 
+
 <audio id="musik" src="lagu..mp3" loop></audio>
 
-<script>
-function bukaUndangan(){
-  const awal = document.getElementById('awal');
-
-  document.getElementById('musik').play();
-
-  awal.style.transition = 'opacity 1s ease, transform 1s ease';
-  awal.style.opacity = '0';
-  awal.style.transform = 'scale(1.03)';
-
-  setTimeout(function(){
-    awal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }, 1000);
-}
 <script>
 function bukaUndangan(){
   const awal = document.getElementById('awal');
   const musik = document.getElementById('musik');
 
   musik.play().catch(error => {
-    console.log("Musik gagal diputar:", error);
+    console.log("Musik belum dapat diputar:", error);
   });
 
+  awal.style.transition = 'opacity 1s ease, transform 1s ease';
   awal.style.opacity = '0';
   awal.style.transform = 'scale(1.03)';
 
@@ -263,6 +250,7 @@ function putarMusik(){
   }
 }
 </script>
+
 <script>
 const bunga = ["🌸", "🌷", "🌼", "🌺"];
 
