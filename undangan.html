@@ -211,10 +211,20 @@ KIRIM UCAPAN & DOA
 
 <script>
 function bukaUndangan(){
-document.getElementById('musik').play();
-document.getElementById('awal').style.display='none';
-document.body.style.overflow='auto';
+  const awal = document.getElementById('awal');
+
+  document.getElementById('musik').play();
+
+  awal.style.transition = 'opacity 1s ease, transform 1s ease';
+  awal.style.opacity = '0';
+  awal.style.transform = 'scale(1.03)';
+
+  setTimeout(function(){
+    awal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }, 1000);
 }
+</script>
 function putarMusik(){
 const m=document.getElementById('musik');
 if(m.paused){m.play()}else{m.pause()}
